@@ -4,17 +4,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: hexo | lmc&#39;s blog</title>
+  <title>IP网际协议 | lmc&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="要有一颗写作的心">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lmc's blog">
-<meta property="og:url" content="http://yoursite.com/tags/hexo/index.html">
+  <meta name="description" content="IP是TCP/IP协议族中最为核心的协议。IP协议具备不可靠(unreliable)、无连接等特点(connectionless),任何可靠性必须由上层来提供（如TCP），它不维护任何关于后续数据报的状态信息，每个数据报都是独立地进行路由。下面我们将要进入IP 的世界，了解它的结构以及IP的路由选择和子网。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IP网际协议">
+<meta property="og:url" content="http://yoursite.com/2015/12/12/网际协议/index.html">
 <meta property="og:site_name" content="lmc's blog">
-<meta property="og:description" content="要有一颗写作的心">
+<meta property="og:description" content="IP是TCP/IP协议族中最为核心的协议。IP协议具备不可靠(unreliable)、无连接等特点(connectionless),任何可靠性必须由上层来提供（如TCP），它不维护任何关于后续数据报的状态信息，每个数据报都是独立地进行路由。下面我们将要进入IP 的世界，了解它的结构以及IP的路由选择和子网。">
+<meta property="og:image" content="http://7xp1nv.com1.z0.glb.clouddn.com/ipheader.png-middle">
+<meta property="og:updated_time" content="2015-12-12T19:07:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lmc's blog">
-<meta name="twitter:description" content="要有一颗写作的心">
+<meta name="twitter:title" content="IP网际协议">
+<meta name="twitter:description" content="IP是TCP/IP协议族中最为核心的协议。IP协议具备不可靠(unreliable)、无连接等特点(connectionless),任何可靠性必须由上层来提供（如TCP），它不维护任何关于后续数据报的状态信息，每个数据报都是独立地进行路由。下面我们将要进入IP 的世界，了解它的结构以及IP的路由选择和子网。">
   
     <link rel="alternative" href="/atom.xml" title="lmc&#39;s blog" type="application/atom+xml">
   
@@ -74,33 +76,86 @@
   </div>
 </header>
     <div class="outer">
-      <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2015/12/08/how-to-use-hexo/" class="archive-article-date">
-  <time datetime="2015-12-08T10:53:53.000Z" itemprop="datePublished">Dec 8</time>
+      <section id="main"><article id="post-网际协议" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/12/网际协议/" class="article-date">
+  <time datetime="2015-12-12T17:55:51.000Z" itemprop="datePublished">2015-12-12</time>
 </a>
-      
-    </header>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/IP-TCP/">IP/TCP</a>
   </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      IP网际协议
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>IP是TCP/IP协议族中最为核心的协议。IP协议具备不可靠(unreliable)、无连接等特点(connectionless),任何可靠性必须由上层来提供（如TCP），它不维护任何关于后续数据报的状态信息，每个数据报都是独立地进行路由。下面我们将要进入IP 的世界，了解它的结构以及IP的路由选择和子网。</p>
+<a id="more"></a>
+<h2 id="IP_u9996_u90E8"><a href="#IP_u9996_u90E8" class="headerlink" title="IP首部"></a>IP首部</h2><p><img src="http://7xp1nv.com1.z0.glb.clouddn.com/ipheader.png-middle" alt=""></p>
+<ul>
+<li>首部长度是指首部占32字节的数目，包括任何选项。由于它是4bit，所有首部最长为60字节。</li>
+<li>总长度是指整个IP数据报的长度，以字节为单位。通过IP首部长度和总长度就可以知道数据报中数据内容的开始位置和长度。该字段为16字节，所以IP 数据报最长可以65535字节，尽管如此，但是大多数的链路层都会对它进行分片，而且主机不要求接收超过576字节的数据报。总长度是必要内容，一些数据链路，如以太网需要填充一些数据以达到最小长度（以太网的最小长得度为46）。通过总长度才能知道当IP小于46字节时，有多少数据是首部。</li>
+<li>TTL设置了数据报可以经过的最多路由器数，它自定了数据报的生存时间。</li>
+<li>数据不足32位就用0填充字节，保证IP 首部始终是32的倍数。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://yoursite.com/2015/12/12/网际协议/" data-id="cii3h7fvh0009s7vn8v5cjd9y" class="article-share-link" data-share="baidu">Share</a>
+      
+
+      
+        <a href="http://yoursite.com/2015/12/12/网际协议/#ds-thread" class="article-comment-link">Comments</a>
+      
+
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IP/">IP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/子网/">子网</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/12/沟通管理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          沟通管理
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/12/12/运动养生/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">运动养生</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+
+  <section id="comments">
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/12/12/网际协议/" data-title="IP网际协议" data-url="http://yoursite.com/2015/12/12/网际协议/"></div>
+  </section>
 </section>
       
       <aside id="sidebar">
